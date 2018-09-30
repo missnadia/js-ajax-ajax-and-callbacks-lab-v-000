@@ -15,7 +15,7 @@ $(document).ready(function (){
 
   var showCommits = (el) => {
     const url = `https://api.github.com/repos/${el.dataset.owner}/${el.dataset.repository}/commits`
-    $.get(url, function(data) {
+    $.get(url).done(function(data) {
       $('#details').html(data);
     }).fail(function(error) {
       displayError()
