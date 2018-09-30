@@ -6,7 +6,7 @@ $(document).ready(function (){
   function searchRepositories() {
     const searchTerms = $('#searchTerms').val()
     const url = `https://api.github.com/search/repositories?q=${searchTerms}`
-    $.get(url, function(data) {
+    $.get(url).done(function(data) {
       $('#results').html(data);
     }).fail(function(error) {
       displayError();
