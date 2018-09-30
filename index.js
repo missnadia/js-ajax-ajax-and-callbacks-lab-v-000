@@ -13,7 +13,7 @@ $(document).ready(function (){
     });
   }
 
-  var showCommits = (el) => {
+  function showCommits(el) {
     const url = `https://api.github.com/repos/${el.dataset.owner}/${el.dataset.repository}/commits`
     $.get(url).done(function(data) {
       $('#details').html(data);
